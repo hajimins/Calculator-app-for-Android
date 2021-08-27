@@ -1,0 +1,191 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"  
+             xmlns:yummy="clr-namespace:Xamarin.Forms.PancakeView;assembly=Xamarin.Forms.PancakeView"
+             x:Class="Calculator.MainPage">
+    <StackLayout Background="#cddafd"><!--CDD9F9-->
+        <Grid Background="#cddafd" ColumnSpacing="20" Margin="20,20,20,10">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="350" />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition />
+                <ColumnDefinition />
+                <ColumnDefinition />
+                <ColumnDefinition />
+            </Grid.ColumnDefinitions>
+
+            <Label x:Name="LabelPink" Grid.Row="0" Grid.ColumnSpan="4" FontSize="55" TextColor="#aec9eb" VerticalOptions="FillAndExpand" BackgroundColor="#cddafd" HorizontalOptions="FillAndExpand" HorizontalTextAlignment="End"/>
+
+            <yummy:PancakeView CornerRadius="70,70,70,70" Grid.Row="1" VerticalOptions="Center" BackgroundColor="#aec9eb"  HorizontalOptions="Center" WidthRequest="100"   
+       HeightRequest="100">
+                <Label Text="C" FontSize="35" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" TextColor="#93B5C6">
+                    <Label.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped_C" CommandParameter="1"/>
+                    </Label.GestureRecognizers>
+                    <Label.Clip>
+                        <EllipseGeometry Center="50,50" RadiusX="50" RadiusY="50"/>
+                    </Label.Clip>
+                </Label>
+            </yummy:PancakeView>
+
+            <yummy:PancakeView CornerRadius="70,70,70,70" Grid.Column="1" Grid.Row="1" VerticalOptions="FillAndExpand" BackgroundColor="#aec9eb" HorizontalOptions="FillAndExpand">
+                <Label Text="()" FontSize="35" TextColor="#fad2e1" HorizontalTextAlignment="Center" VerticalTextAlignment="Center">
+                    <Label.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped_par"/><!-- CommandParameter=""/-->
+                    </Label.GestureRecognizers>
+                </Label>
+            </yummy:PancakeView>
+
+            <yummy:PancakeView CornerRadius="70,70,70,70" Grid.Column="2" Grid.Row="1" VerticalOptions="FillAndExpand" BackgroundColor="#aec9eb" HorizontalOptions="FillAndExpand">
+                <Label Text="%" FontSize="35" TextColor="#fad2e1" HorizontalTextAlignment="Center" VerticalTextAlignment="Center">
+                    <Label.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped_op" CommandParameter="%"/>
+                    </Label.GestureRecognizers>
+                </Label>
+            </yummy:PancakeView>
+
+            <yummy:PancakeView CornerRadius="70,70,70,70" Grid.Column="3" Grid.Row="1" VerticalOptions="FillAndExpand" BackgroundColor="#aec9eb" HorizontalOptions="FillAndExpand">
+                <Label Text="÷" FontSize="35" TextColor="#fad2e1" HorizontalTextAlignment="Center" VerticalTextAlignment="Center">
+                    <Label.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped_op" CommandParameter="÷"/>
+                    </Label.GestureRecognizers>
+                </Label>
+            </yummy:PancakeView>
+
+            <yummy:PancakeView CornerRadius="70,70,70,70" Grid.Row="2" VerticalOptions="FillAndExpand" BackgroundColor="#aec9eb" HorizontalOptions="FillAndExpand">
+                <Label Text="7" FontSize="35" TextColor="White" HorizontalTextAlignment="Center" VerticalTextAlignment="Center">
+                    <Label.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped_rb" CommandParameter="7"/>
+                    </Label.GestureRecognizers>
+                </Label>
+            </yummy:PancakeView>
+
+            <yummy:PancakeView CornerRadius="70,70,70,70" Grid.Column="1" Grid.Row="2" VerticalOptions="FillAndExpand" BackgroundColor="#aec9eb" HorizontalOptions="FillAndExpand">
+                <Label Text="8" FontSize="35" TextColor="White" HorizontalTextAlignment="Center" VerticalTextAlignment="Center">
+                    <Label.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped_rb" CommandParameter="8"/>
+                    </Label.GestureRecognizers>
+                </Label>
+            </yummy:PancakeView>
+
+            <yummy:PancakeView CornerRadius="70,70,70,70" Grid.Column="2" Grid.Row="2" VerticalOptions="FillAndExpand" BackgroundColor="#aec9eb" HorizontalOptions="FillAndExpand">
+                <Label Text="9" FontSize="35" TextColor="White" HorizontalTextAlignment="Center" VerticalTextAlignment="Center">
+                    <Label.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped_rb" CommandParameter="9"/>
+                    </Label.GestureRecognizers>
+                </Label>
+            </yummy:PancakeView>
+
+            <yummy:PancakeView CornerRadius="70,70,70,70" Grid.Column="3" Grid.Row="2" VerticalOptions="FillAndExpand" BackgroundColor="#aec9eb" HorizontalOptions="FillAndExpand">
+                <Label Text="×" FontSize="35" TextColor="#fad2e1" HorizontalTextAlignment="Center" VerticalTextAlignment="Center">
+                    <Label.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped_op" CommandParameter="×"/>
+                    </Label.GestureRecognizers>
+                </Label>
+            </yummy:PancakeView>
+
+            <yummy:PancakeView CornerRadius="70,70,70,70" Grid.Row="3" VerticalOptions="FillAndExpand" BackgroundColor="#aec9eb" HorizontalOptions="FillAndExpand">
+                <Label Text="4" FontSize="35" TextColor="White" HorizontalTextAlignment="Center" VerticalTextAlignment="Center">
+                    <Label.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped_rb" CommandParameter="4"/>
+                    </Label.GestureRecognizers>
+                </Label>
+            </yummy:PancakeView>
+
+            <yummy:PancakeView CornerRadius="70,70,70,70" Grid.Column="1" Grid.Row="3" VerticalOptions="FillAndExpand" BackgroundColor="#aec9eb" HorizontalOptions="FillAndExpand">
+                <Label Text="5" FontSize="35" TextColor="White" HorizontalTextAlignment="Center" VerticalTextAlignment="Center">
+                    <Label.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped_rb" CommandParameter="5"/>
+                    </Label.GestureRecognizers>
+                </Label>
+            </yummy:PancakeView>
+
+            <yummy:PancakeView CornerRadius="70,70,70,70" Grid.Column="2" Grid.Row="3" VerticalOptions="FillAndExpand" BackgroundColor="#aec9eb" HorizontalOptions="FillAndExpand">
+                <Label Text="6" FontSize="35" TextColor="White" HorizontalTextAlignment="Center" VerticalTextAlignment="Center">
+                    <Label.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped_rb" CommandParameter="6"/>
+                    </Label.GestureRecognizers>
+                </Label>
+            </yummy:PancakeView>
+
+            <yummy:PancakeView CornerRadius="70,70,70,70" Grid.Column="3" Grid.Row="3" VerticalOptions="FillAndExpand" BackgroundColor="#aec9eb" HorizontalOptions="FillAndExpand">
+                <Label Text="−" FontSize="35" TextColor="#fad2e1" HorizontalTextAlignment="Center" VerticalTextAlignment="Center">
+                    <Label.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped_op" CommandParameter="-"/>
+                    </Label.GestureRecognizers>
+                </Label>
+            </yummy:PancakeView>
+
+            <yummy:PancakeView CornerRadius="70,70,70,70" Grid.Row="4" VerticalOptions="FillAndExpand" BackgroundColor="#aec9eb" HorizontalOptions="FillAndExpand">
+                <Label Text="1" FontSize="35" TextColor="White" HorizontalTextAlignment="Center" VerticalTextAlignment="Center">
+                    <Label.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped_rb" CommandParameter="1"/>
+                    </Label.GestureRecognizers>
+                </Label>
+            </yummy:PancakeView>
+
+            <yummy:PancakeView CornerRadius="70,70,70,70" Grid.Column="1" Grid.Row="4" VerticalOptions="FillAndExpand" BackgroundColor="#aec9eb" HorizontalOptions="FillAndExpand">
+                <Label Text="2" FontSize="35" TextColor="White" HorizontalTextAlignment="Center" VerticalTextAlignment="Center">
+                    <Label.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped_rb" CommandParameter="2"/>
+                    </Label.GestureRecognizers>
+                </Label>
+            </yummy:PancakeView>
+
+            <yummy:PancakeView CornerRadius="70,70,70,70" Grid.Column="2" Grid.Row="4" VerticalOptions="FillAndExpand" BackgroundColor="#aec9eb" HorizontalOptions="FillAndExpand">
+                <Label Text="3" FontSize="35" TextColor="White" HorizontalTextAlignment="Center" VerticalTextAlignment="Center">
+                    <Label.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped_rb" CommandParameter="3"/>
+                    </Label.GestureRecognizers>
+                </Label>
+            </yummy:PancakeView>
+
+            <yummy:PancakeView CornerRadius="70,70,70,70" Grid.Column="3" Grid.Row="4" VerticalOptions="FillAndExpand" BackgroundColor="#aec9eb" HorizontalOptions="FillAndExpand">
+                <Label Text="+" FontSize="35" TextColor="#fad2e1" HorizontalTextAlignment="Center" VerticalTextAlignment="Center">
+                    <Label.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped_op" CommandParameter="+"/>
+                    </Label.GestureRecognizers>
+                </Label>
+            </yummy:PancakeView>
+
+            <yummy:PancakeView CornerRadius="70,70,70,70" Grid.Row="5" VerticalOptions="FillAndExpand" BackgroundColor="#aec9eb" HorizontalOptions="FillAndExpand">
+                <Label Text="+/−" FontSize="35" TextColor="White" HorizontalTextAlignment="Center" VerticalTextAlignment="Center">
+                    <Label.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped_rb" CommandParameter="+/-"/>
+                    </Label.GestureRecognizers>
+                </Label>
+            </yummy:PancakeView>
+
+            <yummy:PancakeView CornerRadius="70,70,70,70" Grid.Column="1" Grid.Row="5" VerticalOptions="FillAndExpand" BackgroundColor="#aec9eb" HorizontalOptions="FillAndExpand">
+                <Label Text="0" FontSize="35" TextColor="White" HorizontalTextAlignment="Center" VerticalTextAlignment="Center">
+                    <Label.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped_rb" CommandParameter="0"/>
+                    </Label.GestureRecognizers>
+                </Label>
+            </yummy:PancakeView>
+
+            <yummy:PancakeView CornerRadius="70,70,70,70" Grid.Column="2" Grid.Row="5" VerticalOptions="FillAndExpand" BackgroundColor="#aec9eb" HorizontalOptions="FillAndExpand">
+                <Label Text="." FontSize="35" TextColor="White" HorizontalTextAlignment="Center" VerticalTextAlignment="Center">
+                    <Label.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped_rb" CommandParameter="."/>
+                    </Label.GestureRecognizers>
+                </Label>
+            </yummy:PancakeView>
+
+            <yummy:PancakeView CornerRadius="70,70,70,70" Grid.Column="3" Grid.Row="5" VerticalOptions="FillAndExpand" BackgroundColor="#fad2e1" HorizontalOptions="FillAndExpand">
+                <Label Text="=" TextColor="#cddafd" FontSize="35" HorizontalTextAlignment="Center" VerticalTextAlignment="Center">
+                    <Label.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped_op" CommandParameter="="/>
+                    </Label.GestureRecognizers>
+                </Label>
+            </yummy:PancakeView>
+        </Grid>
+    </StackLayout>
+</ContentPage>
+<!--pinkeu ffd6e0   fad2e1-->
